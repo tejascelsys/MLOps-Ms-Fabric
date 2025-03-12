@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "azure_storage_event_stream"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b273c932-ca3c-8392-4be9-a6cf7fe4e8e3"
+  }
+}

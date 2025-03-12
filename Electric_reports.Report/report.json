@@ -1,0 +1,90 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "50fd41cd6656b2eea81f",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"8bfdd3fad5be04953504\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.886013318559312,\"y\":0,\"z\":0,\"width\":736.9573564744215,\"height\":511.37650711456814,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Series\":[{\"queryRef\":\"vehicle_population_predictions_final.predicted_output\"}],\"Category\":[{\"queryRef\":\"vehicle_population_predictions_final.Make\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(vehicle_population_predictions_final.Electric_Vehicle_Type)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"vehicle_population_predictions_final\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"predicted_output\"},\"Name\":\"vehicle_population_predictions_final.predicted_output\",\"NativeReferenceName\":\"predicted_output\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Make\"},\"Name\":\"vehicle_population_predictions_final.Make\",\"NativeReferenceName\":\"Make\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Electric_Vehicle_Type\"}},\"Function\":5},\"Name\":\"CountNonNull(vehicle_population_predictions_final.Electric_Vehicle_Type)\",\"NativeReferenceName\":\"Count of Electric_Vehicle_Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Electric_Vehicle_Type\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 511.38,
+          "width": 736.96,
+          "x": 9.89,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "fa9835b47fe04c520637",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2b69fb8fd99dc5ccd65b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.58219876907549,\"y\":434.0858575331044,\"z\":2000,\"width\":588.6671566960318,\"height\":285.7956577547147,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(vehicle_population_predictions_final.Electric_Vehicle_Type)\"}],\"Category\":[{\"queryRef\":\"vehicle_population_predictions_final.Electric_Vehicle_Type\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"vehicle_population_predictions_final\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Electric_Vehicle_Type\"}},\"Function\":5},\"Name\":\"CountNonNull(vehicle_population_predictions_final.Electric_Vehicle_Type)\",\"NativeReferenceName\":\"Count of Electric_Vehicle_Type\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Electric_Vehicle_Type\"},\"Name\":\"vehicle_population_predictions_final.Electric_Vehicle_Type\",\"NativeReferenceName\":\"Electric_Vehicle_Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Electric_Vehicle_Type\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 285.80,
+          "width": 588.67,
+          "x": 12.58,
+          "y": 434.09,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"8cc2ba3e7a5dd63a40b9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":669.5527202115171,\"y\":31.455496922688724,\"z\":1000,\"width\":588.6671566960318,\"height\":335.22572434751123,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"vehicle_population_predictions_final.Model_Year\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(vehicle_population_predictions_final.Electric_Vehicle_Type)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"vehicle_population_predictions_final\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Model_Year\"},\"Name\":\"vehicle_population_predictions_final.Model_Year\",\"NativeReferenceName\":\"Model_Year\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Electric_Vehicle_Type\"}},\"Function\":5},\"Name\":\"CountNonNull(vehicle_population_predictions_final.Electric_Vehicle_Type)\",\"NativeReferenceName\":\"Count of Electric_Vehicle_Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Electric_Vehicle_Type\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 335.23,
+          "width": 588.67,
+          "x": 669.55,
+          "y": 31.46,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"a164913453837d509530\",\"layouts\":[{\"id\":0,\"position\":{\"x\":670,\"y\":434,\"width\":589,\"height\":286,\"z\":3000,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"vehicle_population_predictions_final.predicted_output\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(vehicle_population_predictions_final.Electric_Vehicle_Type)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"vehicle_population_predictions_final\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"predicted_output\"},\"Name\":\"vehicle_population_predictions_final.predicted_output\",\"NativeReferenceName\":\"predicted_output\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Electric_Vehicle_Type\"}},\"Function\":5},\"Name\":\"CountNonNull(vehicle_population_predictions_final.Electric_Vehicle_Type)\",\"NativeReferenceName\":\"Count of Electric_Vehicle_Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Electric_Vehicle_Type\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 286.00,
+          "width": 589.00,
+          "x": 670.00,
+          "y": 434.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"b64fb4640303e748d2e3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.58219876907549,\"y\":0,\"z\":0,\"width\":587.7684282125265,\"height\":366.68122127019996,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(vehicle_population_predictions_final.predicted_output)\"}],\"Category\":[{\"queryRef\":\"vehicle_population_predictions_final.Model_Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"vehicle_population_predictions_final\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"predicted_output\"}},\"Function\":5},\"Name\":\"CountNonNull(vehicle_population_predictions_final.predicted_output)\",\"NativeReferenceName\":\"Count of predicted_output\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Model_Year\"},\"Name\":\"vehicle_population_predictions_final.Model_Year\",\"NativeReferenceName\":\"Model_Year\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"predicted_output\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 366.68,
+          "width": 587.77,
+          "x": 12.58,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

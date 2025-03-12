@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Electric_reports"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "516a6cf2-6e58-8465-4266-bfe534d3815b"
+  }
+}
