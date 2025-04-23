@@ -17,41 +17,6 @@
 
 # CELL ********************
 
-# Welcome to your new notebook
-# Type here in the cell editor to add code!
-# Welcome to your new notebook
-# Type here in the cell editor to add code!
-# Azure storage access info for open dataset diabetes
-blob_account_name = "celfabricdatalake"
-blob_container_name = "mlops-poc"
-blob_relative_path = "Electric_Vehicle_Population_Data.csv"
-blob_sas_token = r"" # Blank since container is Anonymous access
-    
-# Set Spark config to access  blob storage
-# Set Spark config to access blob storage
-wasbs_path = f"wasbs://{blob_container_name}@{blob_account_name}.blob.core.windows.net/{blob_relative_path}"
-spark.conf.set(f"fs.azure.sas.{blob_container_name}.{blob_account_name}.blob.core.windows.net", blob_sas_token)
-
-print("Remote blob path: " + wasbs_path)
-
-# Read CSV using Spark
-df = spark.read.format("csv") \
-    .option("header", "true") \
-    .option("inferSchema", "true") \
-    .load(wasbs_path)
-
-df.show()
-
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
 # Define the Lakehouse file path for CSV
 lakehouse_path = "abfss://MlOps_Poc@onelake.dfs.fabric.microsoft.com/Electric_Vehicle.Lakehouse/Files/Electric_Vehicle_Population_Data"
 
@@ -63,6 +28,74 @@ df.coalesce(1).write.format("csv") \
 
 print(f"CSV file successfully saved to {lakehouse_path}")
 
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+from azure.storage.blob import BlobServiceClient
+from azure.storage.blob import BlobServiceClient
+from azure.storage.blob import BlobClient 
+import pandas as pd
+from io import StringIO
+# Replace with your actual values
+STORAGE_ACCOUNT_NAME = "dataikudss001"
+SAS_TOKEN = "sv=2024-11-04&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2025-03-24T17:41:04Z&st=2025-03-24T09:41:04Z&spr=https&sig=lk9RgVOd8R%2BP3ZHFU6LwEBwuKxgae8YF0COoMszq9tc%3D"
+CONTAINER_NAME = "dataiku"
+BLOB_NAME = "orders.csv"
+
+# Construct the blob URL with the SAS token
+blob_url = f"https://{STORAGE_ACCOUNT_NAME}.blob.core.windows.net/{CONTAINER_NAME}/{BLOB_NAME}?{SAS_TOKEN}"
+
+# Initialize BlobClient using the blob URL
+blob_client = BlobClient.from_blob_url(blob_url)
+
+# Download blob content as bytes
+downloaded_blob = blob_client.download_blob().readall()
+
+# Convert bytes to StringIO for pandas
+csv_data = StringIO(downloaded_blob.decode("utf-8"))
+
+# Read CSV into pandas DataFrame
+df = pd.read_csv(csv_data)
+
+# Display DataFrame
+print(df.head())
 
 # METADATA ********************
 

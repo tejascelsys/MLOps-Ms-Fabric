@@ -30,7 +30,7 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "Exploratory data analysis",
+        "name": "Data preparation",
         "dependsOn": [
           {
             "activity": "Get Data",
@@ -56,7 +56,7 @@
         "name": "Develop and train models",
         "dependsOn": [
           {
-            "activity": "Exploratory data analysis",
+            "activity": "Data preparation",
             "dependencyConditions": [
               "Completed"
             ]
@@ -76,12 +76,12 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "Evaluate and score models",
+        "name": "Best Model Prediction",
         "dependsOn": [
           {
-            "activity": "Develop and train models",
+            "activity": "Evaluate and score models and apply best model",
             "dependencyConditions": [
-              "Completed"
+              "Succeeded"
             ]
           }
         ]
@@ -99,12 +99,35 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "Apply the best model",
+        "name": "Testing the model",
         "dependsOn": [
           {
-            "activity": "Evaluate and score models",
+            "activity": "Best Model Prediction",
             "dependencyConditions": [
               "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "b3809540-8551-8a43-4a79-914018d849a6",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Evaluate and score models and apply best model",
+        "dependsOn": [
+          {
+            "activity": "Develop and train models",
+            "dependencyConditions": [
+              "Succeeded"
             ]
           }
         ]
